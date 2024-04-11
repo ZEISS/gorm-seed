@@ -1,10 +1,16 @@
-module github.com/zeiss/template-go
+module github.com/zeiss/gorm-seed
 
 go 1.22.1
 
 require (
 	github.com/golang/mock v1.6.0
+<<<<<<< HEAD
 	github.com/golangci/golangci-lint v1.57.2
+=======
+	github.com/golangci/golangci-lint v1.56.2
+	gorm.io/driver/postgres v1.5.7
+	gorm.io/gorm v1.25.9
+>>>>>>> 251a2c7 (chore: seed repo)
 	mvdan.cc/gofumpt v0.6.0
 )
 
@@ -81,8 +87,17 @@ require (
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/hexops/gotextdiff v1.0.3 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+<<<<<<< HEAD
 	github.com/jgautheron/goconst v1.7.1 // indirect
+=======
+	github.com/jackc/pgpassfile v1.0.0 // indirect
+	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
+	github.com/jackc/pgx/v5 v5.4.3 // indirect
+	github.com/jgautheron/goconst v1.7.0 // indirect
+>>>>>>> 251a2c7 (chore: seed repo)
 	github.com/jingyugao/rowserrcheck v1.1.1 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/jirfag/go-printf-func-name v0.0.0-20200119135958-7558a9eaa5af // indirect
 	github.com/jjti/go-spancheck v0.5.3 // indirect
 	github.com/julz/importas v0.1.0 // indirect
@@ -171,6 +186,7 @@ require (
 	go.uber.org/automaxprocs v1.5.3 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.24.0 // indirect
+	golang.org/x/crypto v0.19.0 // indirect
 	golang.org/x/exp v0.0.0-20240103183307-be819d1f06fc // indirect
 	golang.org/x/exp/typeparams v0.0.0-20240314144324-c7f7c6466f7f // indirect
 	golang.org/x/mod v0.16.0 // indirect
