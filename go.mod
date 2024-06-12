@@ -5,7 +5,7 @@ go 1.22.1
 require (
 	github.com/golang/mock v1.6.0
 	github.com/golangci/golangci-lint v1.59.1
-	gorm.io/driver/postgres v1.5.7
+	gorm.io/driver/postgres v1.5.8
 	gorm.io/gorm v1.25.10
 	mvdan.cc/gofumpt v0.6.0
 )
@@ -87,7 +87,7 @@ require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
 	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
-	github.com/jackc/pgx/v5 v5.5.4 // indirect
+	github.com/jackc/pgx/v5 v5.5.5 // indirect
 	github.com/jackc/puddle/v2 v2.2.1 // indirect
 	github.com/jgautheron/goconst v1.7.1 // indirect
 	github.com/jingyugao/rowserrcheck v1.1.1 // indirect
