@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := release
 
 GO 				?= go
 GO_RUN_TOOLS 	?= $(GO) run -modfile ./tools/go.mod
@@ -6,12 +6,9 @@ GO_TEST 		?= $(GO_RUN_TOOLS) gotest.tools/gotestsum --format pkgname
 GO_RELEASER 	?= $(GO_RUN_TOOLS) github.com/goreleaser/goreleaser
 GO_MOD 			?= $(shell ${GO} list -m)
 
-# Module name
-MODULE_NAME ?= github.com/katallaxie/template-go
-
-.PHONY: build
-build: ## Build the binary file.
-	$(GO_RELEASER) build --snapshot --clean
+.PHONY: release
+release: ## Release the project.
+	$(GO_RELEASER) release --clean
 
 .PHONY: generate
 generate: ## Generate code.
@@ -39,11 +36,6 @@ clean: ## Remove previous build.
 	rm -rf .test .dist
 	find . -type f -name '*.gen.go' -exec rm {} +
 	git checkout go.mod
-
-.PHONY: setup
-setup: ## Setup the project.
-	$(GO) mod edit -module $(MODULE_NAME)
-	find . -type f -name '*.go' -exec sed -i -e 's,${GO_MOD},${MODULE_NAME},g' {} \;
 
 .PHONY: help
 help: ## Display this help screen.
