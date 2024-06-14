@@ -1,6 +1,6 @@
 # .github/workflows/main.yml
 
-name: Test & Build
+name: Test & Lint
 
 on:
   workflow_call:

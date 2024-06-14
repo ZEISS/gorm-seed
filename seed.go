@@ -8,8 +8,10 @@ import (
 
 // Seed is a struct that contains the data to be seeded.
 type Seed struct {
+	// Name is the name of the seed.
 	Name string
-	Run  SeedFunc
+	// Run is the function that seeds the data.
+	Run SeedFunc
 }
 
 // SeedFunc is a function that seeds data.
@@ -43,8 +45,9 @@ func WithDatabase(db *gorm.DB) Opt {
 }
 
 // NewSeeder creates a new Seeder.
-func NewSeeder(opts ...Opt) Seeder {
+func NewSeeder(db *gorm.DB, opts ...Opt) Seeder {
 	s := new(seederImpl)
+	s.db = db
 
 	for _, opt := range opts {
 		opt(s)
