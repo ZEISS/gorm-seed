@@ -40,7 +40,7 @@ func main() {
 		panic(err)
 	}
 
-	seeder := seed.NewSeeder(seed.WithDatabase(conn))
+	seeder := seed.NewSeeder(conn)
 	err = seeder.Seed(context.Background(), seeds...)
 	if err != nil {
 		panic(err)
