@@ -15,8 +15,8 @@ type Migrator interface {
 	Migrate(context.Context, ...any) error
 }
 
-// Datastore provides methods for transactional operations.
-type Datastore[R, W any] interface {
+// Database provides methods for transactional operations.
+type Database[R, W any] interface {
 	// ReadTx starts a read only transaction.
 	ReadTx(context.Context, func(context.Context, R) error) error
 	// ReadWriteTx starts a read write transaction.
@@ -61,7 +61,7 @@ type ReadTxFactory[R any] func(*gorm.DB) (R, error)
 type ReadWriteTxFactory[W any] func(*gorm.DB) (W, error)
 
 // NewDatabase returns a new instance of db.
-func NewDatabase[R, W any](conn *gorm.DB, r ReadTxFactory[R], rw ReadWriteTxFactory[W]) (Datastore[R, W], error) {
+func NewDatabase[R, W any](conn *gorm.DB, r ReadTxFactory[R], rw ReadWriteTxFactory[W]) (Database[R, W], error) {
 	return &databaseImpl[R, W]{
 		conn: conn,
 	}, nil
