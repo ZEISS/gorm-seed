@@ -62,9 +62,7 @@ type ReadWriteTxFactory[W any] func(*gorm.DB) (W, error)
 
 // NewDatabase returns a new instance of db.
 func NewDatabase[R, W any](conn *gorm.DB, r ReadTxFactory[R], rw ReadWriteTxFactory[W]) (Database[R, W], error) {
-	return &databaseImpl[R, W]{
-		conn: conn,
-	}, nil
+	return &databaseImpl[R, W]{r, rw, conn}, nil
 }
 
 // Close closes the database connection.
