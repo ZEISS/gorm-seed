@@ -7,7 +7,7 @@ require (
 	github.com/golangci/golangci-lint v1.60.3
 	github.com/stretchr/testify v1.9.0
 	gorm.io/driver/postgres v1.5.9
-	gorm.io/gorm v1.25.11
+	gorm.io/gorm v1.25.12
 	mvdan.cc/gofumpt v0.7.0
 )
 
